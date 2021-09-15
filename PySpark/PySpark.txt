@@ -1,0 +1,20 @@
+#1.List of hospitals in state AL
+a.select("Hospital name","Address","City","State").filter(a.State =='AL').show(10)
+
+#2.All the hospitals in State CA where rating=5 and Department= radiotherapy
+a.select("Hospital name","Address","City","State","ZIP_Code").filter((a.State =='CA')&(a.Department=="radiotherapy")&(a.Rating==5)).show(10)
+
+
+#3.Top rated hospital in city LAKE Village 
+a.select("Hospital Name","Address","City","State","Rating").filter(a.City=='LAKE VILLAGE').orderBy(a.Rating.desc()).show(10)
+
+
+#4.Top rated hospitals in state AK
+a.select("Hospital Name","Address","City","State","Rating").filter(a.State=='AK').orderBy(a.Rating.desc()).show(10)
+
+
+#5.Number of hospitals in zip code=35957 with Hospital Type= Acute Care Hospitals
+a.select("Hospital Name","Address","City","State","ZIP_Code").filter((a.ZIP_Code==35957)&(a.Hospital_Type=='Acute Care Hospitals')).show()
+
+#6.Find the patient in which hospital with patient id
+a.select("Hospital name","Address","City","State","Rating").filter(a.patientID==10005).
